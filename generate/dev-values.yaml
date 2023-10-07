@@ -13,7 +13,7 @@ argocd:
     name: ""
 deploykf_dependencies:
   cert_manager:
-    enabled: false
+    enabled: true
   istio:
     enabled: true
     namespace: istio-system
