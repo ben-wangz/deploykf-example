@@ -13,7 +13,7 @@
             sudo bash -c "echo '$module' >> /etc/modules-load.d/istio.conf"
       done
       ```
-2. create a virtual k8s cluster with 
+2. create a virtual k8s cluster with vcluster
     * deploykf will install basic k8s components such as cert-manager, istio, etc, 
       which may conflict with the existing k8s cluster
 
@@ -26,7 +26,7 @@
       bash generate/download-client.sh
       ```
 2. (optional) modify `generate/dev-values.yaml` to configure your deployment
-3. generate manifests
+3. (optional, already generated) generate manifests
     * ```shell
       # the manifests will be generated at $HOME/deploykf
       bash generate/generate-manifests.sh
@@ -40,11 +40,12 @@
 2. sync
     * ```shell
       argocd app sync -l "app.kubernetes.io/name=deploykf-app-of-apps"
+      # NOTE: This will only be present if you are using a remote destination
       argocd app sync -l "app.kubernetes.io/name=deploykf-namespaces"
       argocd app sync -l "app.kubernetes.io/component=deploykf-dependencies"
       argocd app sync -l "app.kubernetes.io/component=deploykf-core"
       argocd app sync -l "app.kubernetes.io/component=deploykf-opt"
-      argocd app sync -l "app.kubernetes.io/component=deploykf-tools"
+      #argocd app sync -l "app.kubernetes.io/component=deploykf-tools"
       argocd app sync -l "app.kubernetes.io/component=kubeflow-dependencies"
       argocd app sync -l "app.kubernetes.io/component=kubeflow-tools"
       ```
