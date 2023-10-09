@@ -232,7 +232,7 @@ deploykf_opt:
     enabled: true
     namespace: deploykf-minio
     persistence:
-      storageClass: nfs-external
+      storageClass: nfs-external-nas
 
     ## root user configs for minio
     ##
@@ -291,7 +291,7 @@ deploykf_opt:
     enabled: true
     namespace: deploykf-mysql
     persistence:
-      storageClass: nfs-external
+      storageClass: nfs-external-nas
 
     ## configs for the "root@localhost" mysql user
     ##  - these credentials are used by the liveness probes

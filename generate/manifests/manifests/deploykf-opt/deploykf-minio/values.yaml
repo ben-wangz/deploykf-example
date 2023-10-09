@@ -117,7 +117,7 @@ minio:
     ## - if set to "", then `PersistentVolumeClaim/spec.storageClassName` is omitted
     ## - if set to "-", then `PersistentVolumeClaim/spec.storageClassName` is set to ""
     ##
-    storageClass: "nfs-external"
+    storageClass: "nfs-external-nas"
 
     ## the access mode of the PersistentVolumeClaim
     ##
