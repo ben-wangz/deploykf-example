@@ -18,7 +18,7 @@ spec:
   project: "default"
   source:
     repoURL: "https://github.com/ben-wangz/deploykf-example.git"
-    targetRevision: "main"
+    targetRevision: "astronomy"
     path: "generate/manifests/manifests/deploykf-dependencies/istio"
     helm:
       ignoreMissingValueFiles: true

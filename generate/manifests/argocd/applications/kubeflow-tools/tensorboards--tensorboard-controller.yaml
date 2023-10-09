@@ -17,7 +17,7 @@ spec:
   project: "default"
   source:
     repoURL: "https://github.com/ben-wangz/deploykf-example.git"
-    targetRevision: "main"
+    targetRevision: "astronomy"
     path: "generate/manifests/manifests/kubeflow-tools/tensorboards/tensorboard-controller"
   destination:
     server: "https://kubernetes.default.svc"

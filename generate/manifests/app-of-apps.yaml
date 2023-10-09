@@ -11,7 +11,7 @@ spec:
   project: "default"
   source:
     repoURL: "https://github.com/ben-wangz/deploykf-example.git"
-    targetRevision: "main"
+    targetRevision: "astronomy"
     path: "generate/manifests/argocd"
   destination:
     ## NOTE: even if the internal apps target a remote cluster, the apps themselves should be in the Argo CD cluster
