@@ -6,7 +6,7 @@ argocd:
   source:
     repo:
       url: "https://github.com/ben-wangz/deploykf-example.git"
-      revision: "main"
+      revision: "astronomy"
       path: "generate/manifests"
   destination:
     server: https://kubernetes.default.svc
