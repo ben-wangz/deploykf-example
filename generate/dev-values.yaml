@@ -42,6 +42,12 @@ deploykf_core:
         - emmail: "ben.wangz@foxmail.com"
           password:
             value: "Wz123456"
+        - email: "user1@example.com"
+          password:
+            value: "user1"
+        - email: "user2@example.com"
+          password:
+            value: "user2"
       ## dex connectors
       ##  - dex connectors which allow bridging trust to external identity providers
       ##    https://dexidp.io/docs/connectors/
@@ -174,8 +180,10 @@ deploykf_core:
     ##     - `email`: the email of the user (must exactly match the email from your identity provider)
     ##
     users:
-      - id: ben.wangz
-        email: "ben.wangz@foxmail.com"
+      - id: user-1
+        email: "user1@example.com"
+      - id: user-2
+        email: "user2@example.com"
     ## group entities
     ##  - a list of groups that can be referenced when defining profile members
     ##  - each element is a map with the following keys:
@@ -184,7 +192,9 @@ deploykf_core:
     ##
     groups:
       - id: developer
-        users: []
+        users: 
+          - user-1
+          - user-2
     ## profile definitions
     ##  - [WARNING] changing the `ownerEmail` of a profile requires ~manual~ steps
     ##              https://github.com/kubeflow/kubeflow/issues/6576

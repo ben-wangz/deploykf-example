@@ -168,4 +168,4 @@ minio:
   ## minio access policies
   ##  - these policies are created and/or updated by a post-install job
   ##
-  policies: []
+  policies: [{"name":"user1@example.com","policy":{"Statement":[{"Action":["s3:GetBucketLocation","s3:ListBucket"],"Effect":"Allow","Resource":["arn:aws:s3:::kubeflow-pipelines"]},{"Action":["s3:GetObject","s3:PutObject","s3:DeleteObject"],"Effect":"Allow","Resource":["arn:aws:s3:::kubeflow-pipelines/artifacts/developer/*","arn:aws:s3:::kubeflow-pipelines/v2/artifacts/developer/*"]}],"Version":"2012-10-17"}},{"name":"user2@example.com","policy":{"Statement":[{"Action":["s3:GetBucketLocation","s3:ListBucket"],"Effect":"Allow","Resource":["arn:aws:s3:::kubeflow-pipelines"]},{"Action":["s3:GetObject","s3:PutObject","s3:DeleteObject"],"Effect":"Allow","Resource":["arn:aws:s3:::kubeflow-pipelines/artifacts/developer/*","arn:aws:s3:::kubeflow-pipelines/v2/artifacts/developer/*"]}],"Version":"2012-10-17"}}]
