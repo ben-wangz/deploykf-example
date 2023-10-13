@@ -191,7 +191,7 @@ deploykf_core:
     ##     - `users`: a list of user IDs that are members of the group
     ##
     groups:
-      - id: developer
+      - id: team-1
         users: 
           - user-1
           - user-2
@@ -222,9 +222,9 @@ deploykf_core:
     ##                 - `existingSecretSecretKeyKey`: the key within the secret that contains the secret-key (default: "secret_key")
     ##
     profiles:
-      - name: developer
+      - name: team-1
         members:
-          - group: developer
+          - group: team-1
             access:
               role: edit
               notebooksAccess: true

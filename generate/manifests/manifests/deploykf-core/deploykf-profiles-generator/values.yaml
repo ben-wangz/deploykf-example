@@ -4,8 +4,8 @@
 deployKF_helpers:
   deploykf_profiles:
     users_id_mapping: {"user-1":{"email":"user1@example.com","id":"user-1"},"user-2":{"email":"user2@example.com","id":"user-2"}}
-    profiles_users_access_mapping: {"developer":{"user-1":{"notebooksAccess":true,"role":"edit"},"user-2":{"notebooksAccess":true,"role":"edit"}}}
-    users_profiles_access_mapping: {"user-1":{"developer":{"notebooksAccess":true,"role":"edit"}},"user-2":{"developer":{"notebooksAccess":true,"role":"edit"}}}
+    profiles_users_access_mapping: {"team-1":{"user-1":{"notebooksAccess":true,"role":"edit"},"user-2":{"notebooksAccess":true,"role":"edit"}}}
+    users_profiles_access_mapping: {"user-1":{"team-1":{"notebooksAccess":true,"role":"edit"}},"user-2":{"team-1":{"notebooksAccess":true,"role":"edit"}}}
 
   kubeflow:
     pipelines:
@@ -115,9 +115,9 @@ users: [{"email":"user1@example.com","id":"user-1"},{"email":"user2@example.com"
 ## group entities
 ##  - a list of groups that can be referenced when defining profile members
 ##
-groups: [{"id":"developer","users":["user-1","user-2"]}]
+groups: [{"id":"team-1","users":["user-1","user-2"]}]
 
 ## profile definitions
 ##  - a list of profile definitions to be generated
 ##
-profiles: [{"members":[{"access":{"notebooksAccess":true,"role":"edit"},"group":"developer"}],"name":"developer"}]
+profiles: [{"members":[{"access":{"notebooksAccess":true,"role":"edit"},"group":"team-1"}],"name":"team-1"}]
